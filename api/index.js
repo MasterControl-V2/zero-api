@@ -87,4 +87,7 @@ app.get('/', (req, res) => {
   });
 });
 
-module.exports = app;
+// ========== Vercel Serverless Fix ==========
+module.exports = (req, res) => {
+  app(req, res);
+};
